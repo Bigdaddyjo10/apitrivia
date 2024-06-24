@@ -4,7 +4,7 @@ class QuestionService {
         console.log(questions, '🤌🤌🤌');
         const data = await questions.json()
         console.log('parsed data to json', data);
-
+        data.results.forEach(questions => console.log(questions.question))
     }
 }
 
