@@ -9,21 +9,13 @@ export class QuestionsConnector {
         this.getQuestions()
     }
 
-    async testQuestions() {
-        const myPromise = await new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve("Promise has been resolved")
-            }, 3000);
-        });
-        console.log(myPromise);
-    }
+
     async getQuestions() {
         try {
             await questionService.getQuestions();
             Pop.success("Now that is the question")
         } catch (error) {
             Pop.error(error)
-            console.log("Oh no, oh no, oh no no no no", error);
         }
     }
 
@@ -31,7 +23,7 @@ export class QuestionsConnector {
         const theQuestions = AppState.questions
         let innerHTMLSting = ''
         theQuestions.forEach((question) => innerHTMLSting += question.questionHTMLTemplate)
-        setHTML('question', innerHTMLSting)
+        setHTML('showQuestion', innerHTMLSting)
     }
 }
 

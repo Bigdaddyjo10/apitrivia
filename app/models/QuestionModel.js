@@ -11,6 +11,11 @@ export class QuestionModel {
     get questionHTMLTemplate() {
         return `
         <h1>${this.question}?</h1>
+        <div>
+            <button>true</button>
+            <div><button>false</button>
+        </div>
+        </div>
         `
     }
 }
