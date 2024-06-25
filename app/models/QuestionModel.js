@@ -10,13 +10,26 @@ export class QuestionModel {
 
     get questionHTMLTemplate() {
         return `
-        <h1>${this.question}?</h1>
-        <div>
-            <button>true</button>
-            <div><button>false</button>
+       <div class="col-12">
+      <div class="d-flex justify-content-center">
+        <p class="fs-2 fw-bolder">${this.question}?</p>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="d-flex justify-content-center m-2 p-2">
+        <div class="p-2">
+          <button onclick="app.QuestionsConnector.correctAnswer()" class="btn btn-danger fs-2" >${this.correctAnswer}</button>
         </div>
+        <div class="p-2">
+          <button  onclick="app.QuestionsConnector.incorrectAnswer()"class="btn btn-success fs-2">${this.incorrectAnswers}</button>
         </div>
+      </div>
+    </div>
         `
+    }
+
+    theAnswer() {
+        console.log('The Answer is?!?!?!?!?!?!?!?');
     }
 }
 
